@@ -1,0 +1,227 @@
+:root {
+  --purple: #7b61ff;
+  --light-purple: #ece7ff;
+  --yellow: #fddc8f;
+  --orange: #fdb44b;
+  --black: #1d1d1f;
+  --white: #ffffff;
+  --font: 'DM Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: var(--font);
+  background: #f5f5f5;
+  color: var(--black);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "left-top hero right-top"
+    "left-middle center-middle center-right"
+    "lower-left lower-left lower-right";
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Hero section */
+.hero {
+  grid-area: hero;
+  background: var(--purple);
+  color: var(--white);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hero .highlight {
+  color: #ffc84a;
+  font-style: italic;
+}
+
+.hero img {
+  width: 100px;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Left-top section */
+.left-top {
+  grid-area: left-top;
+  background-color: #fff4e1;
+}
+
+.left-top .highlight {
+  color: var(--purple);
+}
+
+.left-top img {
+  width: 80px;
+  margin: 0.5rem 0;
+}
+
+.left-top button {
+  margin-top: 1rem;
+  background: var(--orange);
+  color: var(--black);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Right-top section */
+.right-top {
+  grid-area: right-top;
+  background: var(--light-purple);
+}
+
+.right-top img {
+  width: 80px;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Left-middle (AI) section */
+.left-middle {
+  grid-area: left-middle;
+  background: var(--orange);
+  color: var(--black);
+}
+
+.left-middle img {
+  width: 70px;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.chat-bubble {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.chat-bubble .reply {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Center-middle (Manage Platforms) */
+.center-middle {
+  grid-area: center-middle;
+  text-align: center;
+}
+
+.center-middle img {
+  width: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.center-middle p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Center-right (Schedule) */
+.center-right {
+  grid-area: center-right;
+  background-color: var(--yellow);
+  text-align: center;
+}
+
+.center-right img {
+  width: 60px;
+  margin-top: 0.5rem;
+}
+
+.center-right .week {
+  font-weight: bold;
+}
+
+/* Lower-left (Audience Growth) */
+.lower-left {
+  grid-area: lower-left;
+  background: var(--white);
+  border: 2px dashed var(--purple);
+  text-align: center;
+}
+
+.lower-left .stat {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.lower-left .caption {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.lower-left img {
+  width: 80px;
+  margin-top: 0.5rem;
+}
+
+/* Lower-right (Grow Followers) */
+.lower-right {
+  grid-area: lower-right;
+  background-color: var(--purple);
+  color: var(--white);
+  text-align: center;
+}
+
+.lower-right h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.lower-right img {
+  margin-top: 1rem;
+  width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "hero"
+      "left-top"
+      "right-top"
+      "left-middle"
+      "center-middle"
+      "center-right"
+      "lower-left"
+      "lower-right";
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
